@@ -1,0 +1,126 @@
+
+
+# ============== REGISTRATION VIEWS ================= #
+
+
+# api call for admin registartion
+###
+POST http://127.0.0.1:8000/accounts/register/admin/
+Content-Type: application/json
+
+{
+    "username":"krishna",
+    "email":"krishna@gmail.com",
+    "password":"k123",
+    "phone":"789456143"
+}
+
+# api call for user registartion
+###
+POST http://127.0.0.1:8000/accounts/register/user/
+Content-Type: application/json
+
+{
+    "username":"Manu",
+    "email":"manu@gmail.com",
+    "password":"m123",
+    "phone":"741852263"
+}
+
+# api call for jwt token creation
+###
+POST http://127.0.0.1:8000/accounts/jwt/token/
+Content-Type: application/json
+
+{
+    "username":"krishna",
+    "password":"k123"
+}
+
+# api call for jwt token refresh
+###
+POST http://127.0.0.1:8000/accounts/jwt/token/refresh/
+Content-Type: application/json
+
+{
+    "refresh":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc5MzcxMTYxNiwiaWF0IjoxNzkzNjI1MjE2LCJqdGkiOiJkNGUzNzdiZWU5NDM0MDMwYWJiY2FjZTQ2YWJkOWU3MiIsInVzZXJfaWQiOiIxIn0.pRA0BGwwmX2OW-BAWCeJqqnWZTF6Uucp9PIwF47wvUI"
+}
+
+# api call for displaying user/admin profile
+###
+GET http://127.0.0.1:8000/accounts/profile/
+Accept: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzkzNzE4NjAzLCJpYXQiOjE3OTM3MTgzMDMsImp0aSI6IjE2MzNhNDhhYTYyOTQwMjE5MTZjNzkwYzQ2MzBkODFkIiwidXNlcl9pZCI6IjEifQ.SfOJCuMLIIaRvi73xwaTqLF52U60rKmnkm0jNKhB9hE
+
+
+# ============== LEAD LIST,CREATE VIEWS ================= #
+
+
+# api call for creating leads
+###
+POST http://127.0.0.1:8000/buisness/leads/add/
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzkzNzE4OTY0LCJpYXQiOjE3OTM3MTg2NjQsImp0aSI6IjdiOTE5ZWZiOWMyMjRiZjJiMTNiM2ExOGQ5MGM2ODJhIiwidXNlcl9pZCI6IjEifQ.jAMKF7GVX484zMkjK3gyi6wUw4C57NTmumHRkT29rhg
+
+{
+    "name":"sreya",
+    "email":"sreya@gmail.com",
+    "phone":"878423378",
+    "company":"TECH SOLUTIONS",
+    "source":"website",
+    "status":"new",
+    "description":"interested website developemt and mobile application server"
+}
+
+# api call for listing leads
+###
+GET http://127.0.0.1:8000/buisness/leads/all/
+Accept: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzkzNzE4OTY0LCJpYXQiOjE3OTM3MTg2NjQsImp0aSI6IjdiOTE5ZWZiOWMyMjRiZjJiMTNiM2ExOGQ5MGM2ODJhIiwidXNlcl9pZCI6IjEifQ.jAMKF7GVX484zMkjK3gyi6wUw4C57NTmumHRkT29rhg
+
+
+# ============== LEAD LIST,CREATE VIEWS ================= #
+
+
+# api call for listing one leads
+###
+GET http://127.0.0.1:8000/buisness/leads/2/
+Accept: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzkzNzE4OTY0LCJpYXQiOjE3OTM3MTg2NjQsImp0aSI6IjdiOTE5ZWZiOWMyMjRiZjJiMTNiM2ExOGQ5MGM2ODJhIiwidXNlcl9pZCI6IjEifQ.jAMKF7GVX484zMkjK3gyi6wUw4C57NTmumHRkT29rhg
+
+# api call for updating one leads
+###
+PUT http://127.0.0.1:8000/buisness/leads/1/
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzkzNzE4OTY0LCJpYXQiOjE3OTM3MTg2NjQsImp0aSI6IjdiOTE5ZWZiOWMyMjRiZjJiMTNiM2ExOGQ5MGM2ODJhIiwidXNlcl9pZCI6IjEifQ.jAMKF7GVX484zMkjK3gyi6wUw4C57NTmumHRkT29rhg
+
+{
+  "id": 2,
+  "created_by": "krishna",
+  "name": "sooraj",
+  "email": "soorajj@gmail.com",
+  "phone": "7012219886",
+  "company": "PACIO",
+  "source": "website",
+  "status": "converted",
+  "description": "very interested design",
+  "created_at": "2026-11-02",
+  "updated_at": "2026-11-02"
+}
+
+# api call for partial update of one lead
+###
+PATCH http://127.0.0.1:8000/buisness/leads/2/
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzkzNzE4OTY0LCJpYXQiOjE3OTM3MTg2NjQsImp0aSI6IjdiOTE5ZWZiOWMyMjRiZjJiMTNiM2ExOGQ5MGM2ODJhIiwidXNlcl9pZCI6IjEifQ.jAMKF7GVX484zMkjK3gyi6wUw4C57NTmumHRkT29rhg
+
+{
+    "status":"contracted",
+    "description":"success"
+}
+
+# api call for deleting one leads
+###
+DELETE http://127.0.0.1:8000/buisness/leads/1/
+Accept: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzkzNzE4OTY0LCJpYXQiOjE3OTM3MTg2NjQsImp0aSI6IjdiOTE5ZWZiOWMyMjRiZjJiMTNiM2ExOGQ5MGM2ODJhIiwidXNlcl9pZCI6IjEifQ.jAMKF7GVX484zMkjK3gyi6wUw4C57NTmumHRkT29rhg
